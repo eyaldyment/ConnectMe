@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<xs:schema version="1.0" targetNamespace="http://webservice.connectme.com/" xmlns:tns="http://webservice.connectme.com/" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <xs:element name="CreateGroup" type="tns:CreateGroup"/>
+
+  <xs:element name="CreateGroupResponse" type="tns:CreateGroupResponse"/>
+
+  <xs:element name="GetGroup" type="tns:GetGroup"/>
+
+  <xs:element name="GetGroupResponse" type="tns:GetGroupResponse"/>
+
+  <xs:complexType name="GetGroup">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="GetGroupResponse">
+    <xs:sequence>
+      <xs:element name="return" type="tns:groupPojo" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="groupPojo">
+    <xs:sequence>
+      <xs:element name="groupId" type="xs:string" minOccurs="0"/>
+      <xs:element name="groupName" type="xs:string" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CreateGroup">
+    <xs:sequence>
+      <xs:element name="arg0" type="xs:int"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="CreateGroupResponse">
+    <xs:sequence>
+      <xs:element name="return" type="xs:boolean"/>
+    </xs:sequence>
+  </xs:complexType>
+</xs:schema>
+
